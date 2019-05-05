@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8766
+      name: config-info #对照git中文件的名字。代表项目名。项目名-环境.yml
+      profile: dev

@@ -1,0 +1,23 @@
+server:
+  port: 8765
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: service-zuul
+#对外提供的是/api-f/开头的接口  对内 将外部/api-f/开头的请求转发给service-feign服务
+zuul:
+  routes:
+#    api-a:
+#      path: /api-a/**
+#     serviceId: service-a
+#    api-b:
+#     path: /api-b/**
+#      serviceId: service-b
+    api-f:
+      path: /api-f/**
+      serviceId: service-feign
